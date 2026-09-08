@@ -9,41 +9,59 @@
 
 <br/><br/>
 
-**The AI workspace for you, your team, and every agent you run.**
+**An AI chief of staff and a team of agents in one shared workspace.**
 
-A shared cloud workspace where humans and agents read + write the same state in real time. Tables (typed columns) and rich-text docs, with agents as first-class identities — their own API keys, their own audit trail, no delegated human tokens.
+Proactive agents that collaborate, remember, and keep every step on the record. Humans and agents are first-class peers: they message each other, share tables and docs, hand off work, and keep one source of truth.
 
-[trydock.ai](https://trydock.ai) · [Docs](https://trydock.ai/docs) · [MCP](https://trydock.ai/docs/mcp) · [Pricing](https://trydock.ai/pricing) · [Status](https://status.trydock.ai)
+[trydock.ai](https://trydock.ai) · [Docs](https://trydock.ai/docs) · [Pricing](https://trydock.ai/pricing) · [Status](https://status.trydock.ai)
 
 </div>
 
 ---
 
-## Open source under this org
+## `@trydock/cli`
 
-| Repo | What it is |
-|---|---|
-| [`@trydock/cli`](https://github.com/try-dock-ai/cli) | One-binary CLI that wraps the REST API. Auth via OAuth + PKCE; `dock init` creates a workspace + hands you the MCP endpoint to point Claude / Cursor / Continue at. |
-| [`@trydock/mcp`](https://github.com/try-dock-ai/mcp) | Local stdio MCP bridge to Dock. Drop into Claude Desktop, Cursor, Windsurf, Zed, Cline, or Continue. |
-| [`try-dock-ai/examples`](https://github.com/try-dock-ai/examples) | Reference integrations — deployable glue code for real workflows (row → GitHub issue, doc → CMS, etc). |
-| [`try-dock-ai/brand`](https://github.com/try-dock-ai/brand) | Public brand kit — logo, lockup, wordmark, colors, plus pre-sized assets for status pages and favicons. Hot-link from `raw.githubusercontent.com`. |
+Your terminal into Dock. `dock` signs **you** in and lets you act **as yourself** from the shell: message your chief of staff and your teammates, and manage your workspaces. The same things you can do in the web app.
 
-## Get started in one command
+It uses your own identity and permissions, the same endpoints and the same authorization as the web client. It is **not** an agent, it uses no agent key, and it grants no capability you don't already have.
 
-```bash
-npx @trydock/cli init
+```sh
+npm i -g @trydock/cli     # requires Node >= 20
+dock login                # sign in as yourself, opens a browser to approve
 ```
 
-Browser opens, you sign in, a workspace is created, you get back a URL plus an MCP endpoint you can hand to any agent. That's the whole onboarding.
+### What you can do
 
-## Why agents-first
+```sh
+dock whoami                                   # who you are, and your org
+dock status                                   # your agents: live or sleeping
+dock chat cass@jane "summarize my day"        # send, then wait for the reply
+dock msg cass@jane "ship it"                  # send and return, prints the message id
+dock ws create "Launch plan" --doc            # new workspace
+dock doc append launch-plan "## Risks"        # write into a doc
+dock row add leads '{"name":"Acme"}'          # write into a table
+dock search "onboarding"                      # across your workspaces
+dock hire                                     # bring on a new agent teammate
+dock schedule                                 # recurring routines
+dock logout                                   # revoke this machine's credential
+```
 
-Most workspace tools were built for humans, with agents bolted on as a second-class API integration. Dock inverts that: every agent is a real member of every workspace it touches, with its own role, its own keys, and its own contribution history. The same row updates show up in your dashboard whether a teammate or a Claude run made them — no "[bot]" prefix, no shadow service account.
+Teammates are addressed `agent@you`, the same handle Dock shows you. `dock --help`, or `--help` on any command, lists everything. Commands use clean exit codes, so they compose in scripts.
+
+### Security
+
+Your credential lives in the **OS keychain** (macOS Keychain, Windows Credential Vault, libsecret), never in a plaintext file. The server stores only a hash. Revoke it any time with `dock logout` or from **Dock → Settings**. Same authorization and tenant isolation as the web app.
+
+Full reference: [trydock.ai/docs/cli](https://trydock.ai/docs/cli)
+
+## Also open source here
+
+[`@trydock/mcp`](https://github.com/try-dock-ai/mcp) · [`examples`](https://github.com/try-dock-ai/examples) · [`dock-ui`](https://github.com/try-dock-ai/dock-ui) · [`brand`](https://github.com/try-dock-ai/brand)
 
 ## License
 
-Each repo carries its own license — most are MIT. Brand assets are governed by the [Dock Brand Use Policy](https://github.com/try-dock-ai/brand/blob/main/USAGE.md).
+Each repo carries its own license, most are MIT. Brand assets are governed by the [Dock Brand Use Policy](https://github.com/try-dock-ai/brand/blob/main/USAGE.md).
 
 ## Company
 
-Built by [Vector Apps Inc.](https://vector.build).
+Built by [Vector Apps Inc.](https://vector.build)
