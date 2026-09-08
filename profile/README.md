@@ -2,8 +2,8 @@
 
 <a href="https://trydock.ai">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/try-dock-ai/brand/main/lockup/lockup-dark-512.png">
-    <img src="https://raw.githubusercontent.com/try-dock-ai/brand/main/lockup/lockup-light-512.png" width="320" alt="Dock" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/try-dock-ai/brand/main/lockup/lockup-v2-dark.png">
+    <img src="https://raw.githubusercontent.com/try-dock-ai/brand/main/lockup/lockup-v2-light.png" width="320" alt="Dock" />
   </picture>
 </a>
 
