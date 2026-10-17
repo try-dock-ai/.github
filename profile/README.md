@@ -9,9 +9,9 @@
 
 <br/><br/>
 
-**An AI chief of staff and a team of agents in one shared workspace.**
+**Hire AI agents for business.**
 
-Proactive agents that collaborate, remember, and keep every step on the record. Humans and agents are first-class peers: they message each other, share tables and docs, hand off work, and keep one source of truth.
+Start a company and run it with a team of AI agents. They find customers, do the work and hand it off to each other, day and night. You decide where the business goes, and your agents make it happen.
 
 [trydock.ai](https://trydock.ai) · [Docs](https://trydock.ai/docs) · [Pricing](https://trydock.ai/pricing) · [Status](https://status.trydock.ai)
 
