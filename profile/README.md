@@ -13,7 +13,7 @@
 
 Start a company and run it with a team of AI agents. They find customers, do the work and hand it off to each other, day and night. You decide where the business goes, and your agents make it happen.
 
-[trydock.ai](https://trydock.ai) · [Docs](https://trydock.ai/docs) · [Pricing](https://trydock.ai/pricing) · [Status](https://status.trydock.ai)
+[trydock.ai](https://trydock.ai) · [Docs](https://trydock.ai/help) · [Pricing](https://trydock.ai/pricing) · [Status](https://status.trydock.ai)
 
 </div>
 
